@@ -1,0 +1,185 @@
+{
+  "root": true,
+  "extends": ["prettier"],
+  "plugins": ["prettier"],
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        "@angular-eslint/template/attributes-order": "error",
+        "@angular-eslint/template/button-has-type": "error",
+        "@angular-eslint/template/eqeqeq": "error",
+        "@angular-eslint/template/conditional-complexity": "error",
+        "@angular-eslint/template/no-negated-async": "error",
+        "@angular-eslint/template/banana-in-box": "error",
+        "@angular-eslint/template/no-duplicate-attributes": "error",
+        "@angular-eslint/template/use-track-by-function": "error",
+        "@angular-eslint/template/no-any": "error",
+        "@angular-eslint/template/no-distracting-elements": "error",
+        "@angular-eslint/template/no-interpolation-in-attributes": "error",
+        "@angular-eslint/template/no-positive-tabindex": "error",
+        "@angular-eslint/template/prefer-self-closing-tags": "error",
+        "@angular-eslint/template/prefer-control-flow": "error"
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "eslint:recommended",
+        "plugin:n/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked"
+      ],
+      "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".ts", ".d.ts"]
+          }
+        }
+      },
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "projectService": true,
+        "tsconfigRootDir": "."
+      },
+      "plugins": [
+        "import",
+        "eslint-plugin-prefer-arrow",
+        "@angular-eslint",
+        "@typescript-eslint",
+        "n"
+      ],
+      "rules": {
+        "prettier/prettier": "error",
+        "block-scoped-var": "error",
+        "eqeqeq": "error",
+        "no-var": "error",
+        "prefer-const": "error",
+        "eol-last": "error",
+        "prefer-arrow-callback": "error",
+        "no-trailing-spaces": "error",
+        "quotes": ["warn", "single", {"avoidEscape": true}],
+        "no-restricted-properties": [
+          "error",
+          {
+            "object": "describe",
+            "property": "only"
+          },
+          {
+            "object": "it",
+            "property": "only"
+          }
+        ],
+        "@typescript-eslint/ban-ts-comment": "warn",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-warning-comments": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/camelcase": "off",
+        "n/no-empty-function": "off",
+        "n/no-unsupported-features/es-syntax": "off",
+        "n/no-missing-require": "off",
+        "n/shebang": "off",
+        "no-dupe-class-members": "off",
+        "require-atomic-updates": "off",
+        "@typescript-eslint/no-floating-promises": "error",
+        "prefer-arrow/prefer-arrow-functions": [
+          "warn",
+          {
+            "disallowPrototype": true,
+            "singleReturnOnly": false,
+            "classPropertiesAllowed": false
+          }
+        ],
+        "n/no-unpublished-import": ["error"],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": [
+              "signature",
+              "decorated-field",
+              "decorated-method",
+              "field",
+              "constructor",
+              "method"
+            ]
+          }
+        ],
+        "import/no-unresolved": [
+          "error",
+          {
+            "ignore": ["@model", "@services", "@shared"]
+          }
+        ],
+        "no-restricted-imports": [
+          "error",
+          {
+            "message": "Please import directly from 'rxjs' instead",
+            "name": "rxjs/Rx"
+          }
+        ],
+        "curly": ["warn"],
+        "complexity": ["error", 12],
+        "arrow-body-style": ["error", "as-needed"],
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true,
+            "allowedNames": ["ngOnInit", "ngAfterViewInit"]
+          }
+        ],
+        "no-console": ["error", {"allow": ["warn", "error"]}],
+        "no-unused-vars": "off",
+        "n/no-missing-import": "off",
+        "@typescript-eslint/no-unused-vars": ["error", {"args": "all"}],
+        "max-lines-per-function": ["error", {"skipBlankLines": true}],
+        "lines-between-class-members": [
+          "error",
+          "always",
+          {"exceptAfterSingleLine": true}
+        ],
+        "prefer-template": ["error"],
+        "@typescript-eslint/sort-type-constituents": "error",
+        "no-useless-concat": ["error"],
+        "no-duplicate-imports": ["error"],
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "@typescript-eslint/prefer-optional-chain": "error",
+        "@typescript-eslint/prefer-nullish-coalescing": "error",
+        "@typescript-eslint/restrict-plus-operands": "error",
+        "@typescript-eslint/no-unnecessary-template-expression": "error",
+        "@angular-eslint/use-injectable-provided-in": ["error"],
+        "@angular-eslint/use-component-selector": ["error"],
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/unbound-method": [
+          "error",
+          {
+            "ignoreStatic": true
+          }
+        ],
+        "@angular-eslint/prefer-standalone": ["error"],
+        "@angular-eslint/no-conflicting-lifecycle": ["error"],
+        "@angular-eslint/sort-lifecycle-methods": ["error"],
+        "@angular-eslint/no-duplicates-in-metadata-arrays": ["error"],
+        "@angular-eslint/use-lifecycle-interface": ["error"],
+        "@angular-eslint/component-max-inline-declarations": [
+          "error",
+          {
+            "template": 0,
+            "styles": 0,
+            "animations": 15
+          }
+        ],
+        "@angular-eslint/contextual-decorator": ["error"],
+        "@angular-eslint/no-pipe-impure": ["error"],
+        "@angular-eslint/relative-url-prefix": ["error"]
+      }
+    }
+  ]
+}

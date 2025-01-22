@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-standard-scss",
+    "@stylistic/stylelint-config"
+  ],
+  "rules": {
+    "declaration-property-value-no-unknown": [true],
+    "no-empty-source": null,
+    "color-hex-length": "short",
+    "max-nesting-depth": 2,
+    "@stylistic/string-quotes": "single",
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": ["get"]
+      }
+    ],
+    "at-rule-empty-line-before": [
+      "always",
+      {"except": ["after-same-name", "inside-block"]}
+    ],
+    "@stylistic/block-closing-brace-newline-after": [
+      "always",
+      {"ignoreAtRules": ["if", "else"]}
+    ],
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["ng-deep"]
+      }
+    ],
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreTypes": ["/^app-/", "/^ng-/", "/^ng2-/", "/^fa-/"]
+      }
+    ]
+  }
+}

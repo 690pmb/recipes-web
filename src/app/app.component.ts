@@ -1,14 +1,14 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
-export interface PeriodicElement {
+export type PeriodicElement = {
   name: string;
   position: number;
   weight: number;
   symbol: string;
-}
+};
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
@@ -27,13 +27,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-root',
   imports: [RouterOutlet, MatTableModule, MatPaginatorModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent  implements AfterViewInit{
+export class AppComponent implements AfterViewInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   title = 'recipes-web';
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }

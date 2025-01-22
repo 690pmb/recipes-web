@@ -1,0 +1,9 @@
+build
+dist
+node_modules
+.angular
+.husky
+.github
+*.ts
+public
+.vscode

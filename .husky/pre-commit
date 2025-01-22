@@ -1,0 +1,7 @@
+if [[ ! $(git config --get user.email) =~ .*gmail.* ]]; then
+    echo "Use project gitconfig before commit"
+    echo "For this, run the following command: 'git config include.path "../.gitconfig"'"
+    exit 1
+fi
+
+lint-staged -q --concurrent false
